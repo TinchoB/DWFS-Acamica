@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <link id="csstheme" href="styles/day.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <title>Record & Upload ur gifOS</title>
+</head>
+
+<body>
+    <header class="header">
+        <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</p>
+    </header>
+    <div class="container">
+        <nav class="nav-bar">
+            <a href="index.html">
+                <img id="back" alt="Volver al home" src="images/arrow.svg">
+            </a>
+            <a href="index.html">
+                <img id="logo" alt="Logo de la pagina" src="images/logo.png">
+            </a>
+        </nav>
+        <div class="container-record-gif" id="container-record-gif">
+            <section class="record" id="record">
+                <header class="record-header" id="record-header">
+                    <p class="record-header-text">Crear Guifos</p>
+                </header>
+                <div class="video-container" id="video-container">
+                    <video id="video"></video>
+                    <img alt="Preview del gif grabado" id="preview" src="images/dog.gif">
+                    <div class="uploadDiv" id="uploadDiv">
+                        <img src="images/globe.png" alt="">
+                        <p class="upload-time">Estamos subiendo tu guifo…</p>
+                        <div class="upload-bar"></div>
+                        <p class="eta">Tiempo restante: <s>38 años</s> algunos minutos</p>
+                    </div>
+                </div>
+                <article class="article" id="article">
+                    <div class="record-title">
+                        <img class="window-img" alt="ventana" src="images/windowImg.png">
+                        <header class="record-text"><strong>Aquí podrás crear tus propios guifos</strong></header>
+                    </div>
+
+                    <div class="p">
+                        <p>Crear tu<strong> guifo </strong>es muy fácil, graba cualquier imagen con tu cámara y obtén
+                            guifos
+                            personalizados. Los pasos para crear tu guifo son:</p>
+                        <ol>
+                            <li>Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
+                            <li>Capturar tu momento guifo</li>
+                            <li>Revisar el momento</li>
+                            <li>Listo para subir y compartir!</li>
+                        </ol>
+                        <p>¿Quieres comenzar a crear tu<strong> guifo </strong>ahora?</p>
+                    </div>
+                </article>
+                <footer class="footer" id="footer">
+                    <button id="btn9" onclick="btnCancelar()">Cancelar</button>
+                    <button id="btn10" onclick="getStreamAndRecord()">Comenzar</button>
+                    <button class="btn15" id="btn11"><img src="images/camera.svg" alt=""></button>
+                    <button class="btn16" id="btn12" onclick="grabarGif()">Capturar</button>
+                    <button class="btn15" id="btn13"><img src="images/recording.svg" alt=""></button>
+                    <button class="btn16" id="btn14">Listo</button>
+                    <button class="btn17" id="btn17" onclick="reloadPage()">Repetir Captura</button>
+                    <button class="btn18" id="btn18">Subir Guifo</button>
+                    <button class="btn17" id="btn19" onclick="reloadPage()">Cancelar</button>
+                </footer>
+            </section>
+        </div>
+
+        <div class="success" id="success">
+            <section class="record">
+                <header class="record-header">
+                    <p class="record-header-text">Guifo Subido Con Éxito</p>
+                </header>
+                <div class="preview-container" id="preview-container">
+                    <video class="GiifPreview" id="Giifpreview"></video>
+                </div>
+                <aside class="aside">
+                    <p>Guifo creado con éxito</p>
+                    <button class="btn20" id="btn21" onclick="copyGif()">Copiar Enlace Guifo</button>
+                    <button class="btn20" id="btn22" onclick="downloadGif()">Descargar Guifo</button>
+                </aside>
+                <footer class="footer">
+                    <button class="btn25" id="btn25" onclick="btnListo()">Listo</button>
+                </footer>
+            </section>
+        </div>
+        <section class="localStorage">
+            <div class="template-bar">
+                <p class="template-text-bar" id='suggestions-text'>
+                    Mis guifos
+                </p>
+            </div>
+            <div class="localStorage-grid">
+                <div class="grid0" id="grid0"></div>
+                <div class="grid1" id="grid1"> </div>
+                <div class="grid2" id="grid2"> </div>
+                <div class="grid3" id="grid3"> </div>
+                <div class="grid4" id="grid4"> </div>
+                <div class="grid5" id="grid5"> </div>
+                <div class="grid6" id="grid6"> </div>
+                <div class="grid7" id="grid7"> </div>
+                <div class="grid8" id="grid8"> </div>
+                <div class="grid9" id="grid9"> </div>
+                <div class="grid10" id="grid10"> </div>
+                <div class="grid11" id="grid11"> </div>
+            </div>
+        </section>
+    </div>
+    <script src="scripts/scriptsRecordPage.js"></script>
+    <script src="scripts/localStorageTheme.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+</body>
+
+</html>

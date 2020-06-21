@@ -1,0 +1,121 @@
+body {
+    background-color: #FFF4FD;
+}
+
+.header {
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    box-shadow: 0 1px 0 0 #110038;
+}
+
+nav button {
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.btn1:hover, .btn2:hover, .btn3:hover {
+    background: #E6BBE2;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.theme-menu {
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.theme-menu #theme1 {
+    color: #110038;
+    background: #FFF4FD;
+    border: 1px solid #CCA6C9;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.theme-menu #theme2 {
+    color: #110038;
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+#theme1:hover, #theme2:hover {
+    outline: 1px dotted #110038;
+}
+
+.misGifos {
+    color: #110038;
+}
+
+.misGifos:hover {
+    border: 1px dotted #110038;
+}
+
+.misGifos:active {
+    color: #88799b;
+}
+
+nav a div:hover {
+    border: 1px dotted #110038;
+}
+
+nav a div:active {
+    color: #110038;
+}
+
+.search-bar {
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.search-bar nav {
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+.btn4 {
+    background: #E6E6E6;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.btn4 .search {
+    color: #B4B4B4;
+}
+
+.search-textfield-results {
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.template-bar {
+    border: 1px solid #E6BBE2;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+}
+
+.suggestions-gif1, .suggestions-gif2, .suggestions-gif3, .suggestions-gif4 {
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.gif-bar {
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+.btn-container {
+    color: #FFFFFF;
+    background: #4180F6;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.btn-container:hover {
+    background: #3A72DB;
+    outline: 1px dotted #110038;
+}
+
+.trending-gif-small:hover, .trending-gif-big:hover {
+	box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.trending-gif-bar, .trending-gif-big-bar {
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+ }

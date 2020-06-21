@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="styles/styles.css" rel="stylesheet" type="text/css">
+	<link id="csstheme" href="styles/day.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
+	<title>gifOS</title>
+</head>
+
+<body>
+	<header class="header">
+		<p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803</p>
+	</header>
+	<div class="container">
+		<nav class="nav-bar">
+			<a onclick="reloadPage()">
+				<img id="logo" alt="Logo de la pagina" src="images/logo.png">
+			</a>
+			<div class="generic-nav-div"></div>
+			<button onclick="window.location.href='record.html'" class="btn1">
+				<span>Crear gifOS</span>
+			</button>
+			<button class="btn2" onclick="themeMenu()">
+				<span>Elegir Temas</span>
+			</button>
+			<button class="btn3" onclick="themeMenu()">
+				<span>
+					<img id="dropdown" alt="Dropdown para seleccionar el tema" src="images/dropdown.svg">
+				</span>
+			</button>
+			<a class="misGifos" href="record.html">
+				<p><u>M</u>is gifOS</p>
+			</a>
+		</nav>
+
+		<div class="theme-menu">
+			<button id="theme1" onclick="changetheme('styles/day.css'), changelogo('images/logo.png')"><u>S</u>ailor
+				Day</button>
+			<button id="theme2"
+				onclick="changetheme('styles/night.css'), changelogo('images/logoDark.png')"><u>S</u>ailor
+				Night</button>
+		</div>
+
+		<section class="search-bar">
+			<nav class="nav-bar">
+				<p>Buscar</p>
+			</nav>
+			<div class="search-background">
+				<div class="search-textfield">
+					<input id="search-textfield" type="text"
+						placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+				</div>
+				<button class="btn4" type="button" onclick="getSearchResults()">
+					<span class="lupa">
+						<img id="lupa" alt="Boton para buscar gifs" src="images/lupa_inactive.svg">
+					</span>
+					<span class="search">Buscar</span>
+				</button>
+			</div>
+		</section>
+
+		<section class="suggestions">
+			<nav class="template-bar">
+				<p class="template-text-bar">
+					Hoy te sugerimos:
+				</p>
+			</nav>
+			<div class="suggestions-gif">
+				<div class="suggestions-gif1">
+					<div class="gif-bar">
+						<p id="#0"></p>
+						<img alt="Boton exit" src="images/button3.svg">
+					</div>
+					<div class="gif-background1" id="suggestions-gif0">
+						<button id=btn5 class="btn-container" type="button">Ver más…</button>
+					</div>
+				</div>
+				<div class="suggestions-gif2">
+					<div class="gif-bar">
+						<p id="#1"></p>
+						<img alt="Boton exit" src="images/button3.svg">
+					</div>
+					<div class="gif-background2" id="suggestions-gif1">
+						<button id=btn6 class="btn-container" type="button">Ver más…</button>
+					</div>
+				</div>
+				<div class="suggestions-gif3">
+					<div class="gif-bar">
+						<p id="#2"></p>
+						<img alt="Boton exit" src="images/button3.svg">
+					</div>
+					<div class="gif-background3" id="suggestions-gif2">
+						<button id=btn7 class="btn-container" type="button">Ver más…</button>
+					</div>
+				</div>
+
+				<div class="suggestions-gif4">
+					<div class="gif-bar">
+						<p id="#3"></p>
+						<img alt="Boton exit" src="images/button3.svg">
+					</div>
+					<div class="gif-background4" id="suggestions-gif3">
+						<button id=btn8 class="btn-container" type="button">Ver más…</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="trending">
+			<div class="template-bar">
+				<p class="template-text-bar" id='suggestions-text'>
+					Tendencias:
+				</p>
+			</div>
+			<div class="trending-gif-container">
+				<div class="trending-gif-small" id="trending-gif0">
+					<div class="trending-gif-bar" id="trending-gif-bar0"></div>
+				</div>
+				<div class="trending-gif-small" id="trending-gif1">
+					<div class="trending-gif-bar" id="trending-gif-bar1"></div>
+				</div>
+				<div class="trending-gif-small" id="trending-gif2">
+					<div class="trending-gif-bar" id="trending-gif-bar2"></div>
+				</div>
+				<div class="trending-gif-small" id="trending-gif3">
+					<div class="trending-gif-bar" id="trending-gif-bar3"></div>
+				</div>
+				<div class="trending-gif-big" id="trending-gif4">
+					<div class="trending-gif-big-bar" id="trending-gif-bar4"></div>
+				</div>
+				<div class="trending-gif-small" id="trending-gif5">
+					<div class="trending-gif-bar" id="trending-gif-bar5"></div>
+				</div>
+				<div class="trending-gif-small" id="trending-gif6">
+					<div class="trending-gif-bar" id="trending-gif-bar6"></div>
+				</div>
+				<div class="trending-gif-small" id="trending-gif7">
+					<div class="trending-gif-bar" id="trending-gif-bar7"></div>
+				</div>
+				<div class="trending-gif-small" id="trending-gif8">
+					<div class="trending-gif-bar" id="trending-gif-bar8"></div>
+				</div>
+				<div class="trending-gif-big" id="trending-gif9">
+					<div class="trending-gif-big-bar" id="trending-gif-bar9"></div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="scripts/scriptsIndexPage.js"></script>
+	<script src="scripts/localStorageTheme.js"></script>
+</body>
+
+</html>
