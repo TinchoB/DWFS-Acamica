@@ -11,6 +11,13 @@ function reloadPage() {
   location.reload();
 }
 
+//Funcion para generar el localstorage de las busqueadas realizadas
+function savedSearchesLS() {
+  return localStorage.getItem("searches") == undefined
+      ? localStorage.setItem("searches", "[]")
+      : console.log('Local Storage ya generado');
+}
+
 //Menú desplegable donde están los 2 themes 
 function themeMenu() {
   var div = document.getElementsByClassName("theme-menu")[0];
@@ -117,9 +124,30 @@ function suggestions() {
     })
 }
 
+//Funcion para mostrar las ultimas 5 busquedas
+
+// function savedSearches() {
+//   let $savedSearches = JSON.parse(localStorage.getItem(""));
+//   if ($savedSearches != undefined && $savedSearches.length > 0) {
+//       for (let i = 0; i < $savedSearches.length; i++) {
+//           let grid = document.getElementById("grid" + i);
+//           fetch("https://api.giphy.com/v1/gifs/" + gifIds[i] + "?api_key=" + apiKey)
+//               .then(response => {
+//                   return response.json();
+//               })
+//               .then(data => {
+//                   var gif = data.data.images.original.url;
+//                   grid.style.backgroundImage = "url(" + gif + ")";
+//               });
+//       }
+//   }
+// }
+
 //Ejecuciones de funciones
+savedSearchesLS();
 trending();
 suggestions();
+
 
 // Funcion de busqueda de gifs
 function searchBtn() {
@@ -134,3 +162,4 @@ function searchBtn() {
     alert('La busqueda no se pudo realizar, reinicie la pagina')
   }
 }
+
