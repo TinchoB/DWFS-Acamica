@@ -221,17 +221,11 @@ nav a div:active {
     text-align: center;
     line-height: 18px;
     margin-top: 12px;
-    margin-bottom: 54px;
     margin-right: 8px;
     padding: 8px 12px 8px 7px;
 }
 
-.saved-searches,
-#saved-searches-btn1,
-#saved-searches-btn2,
-#saved-searches-btn3,
-#saved-searches-btn4,
-#saved-searches-btn5 {
+#saved-searches {
     display: none;
 }
 
