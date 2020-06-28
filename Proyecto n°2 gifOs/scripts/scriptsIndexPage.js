@@ -5,11 +5,11 @@ const $suggestionsArray = ['Barney Stinson', 'Ferrari', 'Sony', 'Metal Gear', 'A
 const $suggestionsRandomPick = $suggestionsArray[Math.floor(Math.random() * $suggestionsArray.length)];
 
 //
-let tau = '1';
-
 function reloadPage() {
     location.reload();
 }
+
+// document.getElementById("search-btn").disabled = true;
 
 //Funcion para generar el localstorage de las busqueadas realizadas
 function savedSearchesLS() {
@@ -51,7 +51,7 @@ function getSearchResults(search) {
         var search = document.getElementById('search-textfield').value;
     }
     const found =
-        fetch('http://api.giphy.com/v1/gifs/search?q=' + search +
+        fetch('https://api.giphy.com/v1/gifs/search?q=' + search +
             '&api_key=' + $apikey)
         .then((response) => {
 
@@ -70,9 +70,12 @@ function getSearchResults(search) {
         .catch((error) => {
             return error
         })
-    tau = '1';
-    searchBtn(trending());
 
+    var suggestionsSection = document.getElementsByClassName('suggestions')[0];
+    let suggestionsText = document.getElementById('suggestions-text');
+
+    suggestionsSection.style.display = 'none';
+    suggestionsText.innerHTML = ('Tu busqueda en gifOS: ' + search);
 
     let searches = JSON.parse(localStorage.getItem('searches'));
     searches.push(search);
@@ -85,7 +88,7 @@ let $trendinglimit = '10';
 
 function trending() {
     const found =
-        fetch('http://api.giphy.com/v1/gifs/trending?' + '&api_key=' + $apikey + '&limit=' + $trendinglimit)
+        fetch('https://api.giphy.com/v1/gifs/trending?' + '&api_key=' + $apikey + '&limit=' + $trendinglimit)
         .then((response) => {
             return response.json()
         }).then(data => {
@@ -108,7 +111,7 @@ function trending() {
 
 //Función para los gif sugeridos
 function suggestions() {
-    fetch('http://api.giphy.com/v1/gifs/search?' + 'api_key=' + $apikey + '&q=' + $suggestionsRandomPick + '&limit=4')
+    fetch('https://api.giphy.com/v1/gifs/search?' + 'api_key=' + $apikey + '&q=' + $suggestionsRandomPick + '&limit=4')
         .then((response) => {
             return response.json()
         }).then(data => {
@@ -179,17 +182,3 @@ savedSearchesLS();
 createBtns();
 trending();
 suggestions();
-
-// Funcion de busqueda de gifs
-function searchBtn() {
-    var suggestionsSection = document.getElementsByClassName('suggestions')[0];
-    let prueba1 = document.getElementById('suggestions-text');
-
-    if (tau == '1') {
-        suggestionsSection.style.display = 'none';
-        prueba1.innerHTML = 'Tu busqueda en gifOS'; //Mejorar la frase y agregar la frase buscada.
-
-    } else {
-        alert('La busqueda no se pudo realizar, reinicie la pagina')
-    }
-}

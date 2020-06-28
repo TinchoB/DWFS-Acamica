@@ -477,19 +477,6 @@ nav a div:active {
     background-image: url("");
 }
 
-.record {
-    max-width: 684px;
-    height: 386px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-    margin: auto;
-}
-
-.record-header {
-    max-width: 678px;
-    height: 24px;
-}
-
 article div {
     display: flex;
     flex-direction: column;
@@ -505,24 +492,22 @@ footer button {
 
 
 /*
-
 Upload page style
-
 */
 
 .record {
+    max-width: 684px;
     box-sizing: content-box;
     margin-top: 30px;
     margin-left: auto;
+    margin-right: auto;
     width: 684px;
     height: 386px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     padding-top: 3px;
 }
 
 .record-header {
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    max-width: 678px;
     width: 99%;
     height: 24px;
     font-size: 14px;
@@ -590,9 +575,6 @@ li {
 }
 
 #btn10 {
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     width: 144px;
     height: 36px;
     margin-right: 15px;
@@ -615,9 +597,6 @@ li {
 }
 
 #btn11 {
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     display: none;
 }
 
@@ -632,9 +611,6 @@ li {
 }
 
 #btn12 {
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     display: none;
 }
 
@@ -654,16 +630,10 @@ li {
 }
 
 .btn17 {
-    background: #FFF4FD;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     display: none;
 }
 
 .btn18 {
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     display: none;
     margin-right: 14px;
 }
@@ -735,9 +705,6 @@ li {
 .btn25 {
     width: 144px;
     height: 36px;
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
 #success {
