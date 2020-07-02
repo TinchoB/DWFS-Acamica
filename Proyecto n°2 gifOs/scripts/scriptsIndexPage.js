@@ -9,7 +9,52 @@ function reloadPage() {
     location.reload();
 }
 
-// document.getElementById("search-btn").disabled = true;
+let searchTextField = document.getElementById('search-textfield');
+let searchBtn = document.getElementById("search-btn");
+let lupa = document.getElementById('lupa');
+let buscar = document.getElementById('search');
+
+searchTextField.addEventListener("focus", searchBtnFocus);
+searchTextField.addEventListener("blur", searchBtnBlur);
+
+//Funcion para el foco del boton de busqueda
+function searchBtnFocus() {
+
+    if ((localStorage.getItem("theme")) == ("styles/day.css")) {
+        searchBtn.disabled = false;
+        searchBtn.style.background = '#F7C9F3';
+        searchBtn.style.border = '1px solid #110038';
+        searchBtn.style.boxshadow = 'inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF';
+        buscar.style.color = 'black';
+        lupa.style.filter = 'invert(100%)';
+    } else {
+        searchBtn.disabled = false;
+        searchBtn.style.background = '#EE3EFE';
+        searchBtn.style.border = '1px solid #110038';
+        searchBtn.style.boxshadow = 'inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF';
+        buscar.style.color = 'white';
+        lupa.style.filter = 'invert(1%)';
+    }
+}
+
+//Funcion para el foco del boton de busqueda
+function searchBtnBlur() {
+
+    if ((localStorage.getItem("theme")) == ("styles/day.css")) {
+        searchBtn.style.background = '#E6E6E6';
+        searchBtn.style.border = '1px solid #808080';
+        searchBtn.style.boxshadow = 'inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF';
+        buscar.style.color = '#B4B4B4';
+        lupa.style.filter = 'invert(45%)';
+
+    } else {
+        searchBtn.style.background = '#B4B4B4';
+        searchBtn.style.border = '1px solid #808080';
+        searchBtn.style.boxshadow = 'inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF';
+        buscar.style.color = '#8F8F8F';
+        lupa.style.filter = 'invert(45%)';
+    }
+}
 
 //Funcion para generar el localstorage de las busqueadas realizadas
 function savedSearchesLS() {
@@ -44,43 +89,78 @@ function changedropdown(dropdown) {
     document.getElementById('dropdown').setAttribute('src', dropdown);
 }
 
+
 //Función para realizar la búsqueda de los GIF
 function getSearchResults(search) {
 
-    if (search == undefined) {
-        var search = document.getElementById('search-textfield').value;
+    var valorBuscado = document.getElementById('search-textfield').value;
+
+    if (valorBuscado == '') {
+        document.getElementById("search-btn").disabled = true;
+    } else {
+        if (search == undefined) {
+            var search = document.getElementById('search-textfield').value;
+        }
+        const found =
+            fetch('https://api.giphy.com/v1/gifs/search?q=' + search +
+                '&api_key=' + $apikey)
+            .then((response) => {
+
+                return response.json()
+            }).then(data => {
+                for (i = 0; i <= 9; i++) {
+                    var $trendingGif = data.data;
+                    var divv = document.getElementById('trending-gif' + i);
+                    let prueba2 = document.getElementById('trending-gif-bar' + i);
+                    gif = $trendingGif[i].images.original.url;
+                    let title1 = $trendingGif[i].title.slice(0, 35);
+                    divv.style.backgroundImage = 'url(' + gif + ')';
+                    prueba2.innerHTML = '#' + title1;
+                }
+            })
+            .catch((error) => {
+                return error
+            })
+
+        var suggestionsSection = document.getElementsByClassName('suggestions')[0];
+        let suggestionsText = document.getElementById('suggestions-text');
+
+        suggestionsSection.style.display = 'none';
+        suggestionsText.innerHTML = ('Tu busqueda en gifOS: ' + search);
+
+        let searches = JSON.parse(localStorage.getItem('searches'));
+        searches.push(search);
+        localStorage.setItem('searches', JSON.stringify(searches));
+        savedSearches();
+        document.getElementById('search-textfield').value = '';
     }
-    const found =
-        fetch('https://api.giphy.com/v1/gifs/search?q=' + search +
-            '&api_key=' + $apikey)
-        .then((response) => {
+}
 
-            return response.json()
-        }).then(data => {
-            for (i = 0; i <= 9; i++) {
-                var $trendingGif = data.data;
-                var divv = document.getElementById('trending-gif' + i);
-                let prueba2 = document.getElementById('trending-gif-bar' + i);
-                gif = $trendingGif[i].images.original.url;
-                let title1 = $trendingGif[i].title.slice(0, 35);
-                divv.style.backgroundImage = 'url(' + gif + ')';
-                prueba2.innerHTML = '#' + title1;
-            }
-        })
-        .catch((error) => {
-            return error
-        })
+//Funcion para el auto-suggest del buscador
 
-    var suggestionsSection = document.getElementsByClassName('suggestions')[0];
-    let suggestionsText = document.getElementById('suggestions-text');
+document.addEventListener('keydown', logKey);
 
-    suggestionsSection.style.display = 'none';
-    suggestionsText.innerHTML = ('Tu busqueda en gifOS: ' + search);
 
-    let searches = JSON.parse(localStorage.getItem('searches'));
-    searches.push(search);
-    localStorage.setItem('searches', JSON.stringify(searches));
-    savedSearches();
+function logKey(e) {
+    let $inputTeclado = document.getElementById('search-textfield').value
+
+    function buscadorJs() {
+        fetch('https://api.giphy.com/v1/gifs/search/tags?' + '&api_key=' + $apikey + '&q=' + $inputTeclado)
+            .then((response) => {
+                return response.json()
+
+            }).then(data => {
+                for (i = 0; i < 3; i++) {
+                    var $obj = data.data[i].name
+                    $result = document.getElementById('result-text' + i)
+                    $result.innerHTML = ($obj)
+                    document.getElementById('search-results').style.display = 'flex';
+                }
+
+                return data;
+            })
+    }
+    buscadorJs();
 }
 
 //Función para las Tendencias.
@@ -149,6 +229,7 @@ function savedSearches() {
     let $busquedas = document.getElementById('saved-searches-btn' + $count);
     $busquedas.innerHTML = '#' + $savedSearches[$count]
     $busquedas.style.display = 'inline';
+    document.getElementById('search-results').style.display = 'none';
 }
 
 function createBtns() {

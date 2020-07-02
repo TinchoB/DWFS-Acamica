@@ -184,6 +184,49 @@ nav a div:active {
     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
 }
 
+.search-results {
+    width: 1200px;
+    height: 160px;
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.result {
+    z-index: 999;
+    width: 1058px;
+    height: 34px;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+#result0 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 12px;
+}
+
+#result1 {
+    margin-left: 12px;
+}
+
+#result2 {
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.result-text {
+    margin-top: 5px;
+    margin-left: 12px;
+}
+
+.result-text:hover {
+    margin: 3px 3px 0px 3px;
+    padding: 3px 0px 3px 10px;
+}
+
 .btn4 {
     float: right;
     width: 102px;

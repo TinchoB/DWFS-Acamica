@@ -87,6 +87,21 @@ nav a div:active {
     filter: invert(45%);
 }
 
+.search-results {
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.result {
+    background: #CCCCCC;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.result-text:hover {
+    outline: 1px dotted #110038;
+}
+
 .btn4 {
     background: #B4B4B4;
     border: 1px solid #808080;

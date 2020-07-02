@@ -49,14 +49,29 @@
             </nav>
             <div class="search-background">
                 <div class="search-textfield">
-                    <input id="search-textfield" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                    <input id="search-textfield" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" required>
                 </div>
-                <button class="btn4" id='search-btn' type="button" onclick="getSearchResults()">
+                <button class="btn4" id='search-btn' type="submit" onclick="getSearchResults()">
                     <span class="lupa">
                         <img id="lupa" alt="Boton para buscar gifs" src="images/lupa_inactive.svg">
                     </span>
-                    <span class="search">Buscar</span>
+                    <span class="search" id='search'>Buscar</span>
                 </button>
+            </div>
+            <div class='search-results' id='search-results'>
+                <div class='result' id='result0'>
+                    <p class='result-text' id='result-text0' onclick="getSearchResults()">
+                        Ingrese un valor para realizar la busqueda :)
+                    </p>
+                </div>
+                <div class='result' id='result1'>
+                    <p class='result-text' id='result-text1' onclick="getSearchResults()">
+                    </p>
+                </div>
+                <div class='result' id='result2'>
+                    <p class='result-text' id='result-text2' onclick="getSearchResults()">
+                    </p>
+                </div>
             </div>
         </section>
 
