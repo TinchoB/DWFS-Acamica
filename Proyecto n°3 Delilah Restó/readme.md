@@ -1,8 +1,5 @@
 Archivos que conforman al proyecto:
-	queries.sql
-	server.js
-	package.json / package-lock.json
-	spec.yaml / doc.html
+	queries.sql / server.js / package.json / package-lock.json / spec.yaml / doc.html
 
 --- Detalle:
 
