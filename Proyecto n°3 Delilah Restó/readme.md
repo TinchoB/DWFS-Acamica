@@ -8,11 +8,11 @@ Se encuentran las tablas necesarias para realizar el CRUD de productos / Creacio
 Ademas de los CREATE, se incluye un usuario administrador.
 Con copiar y pegar las queries es suficiente.
 
--server.js: Archivo js donde se encuentran las API.
+- server.js: Archivo js donde se encuentran las API.
 
--package.json / package-lock.json : Archivo con el listado de dependencias necesarias para el PRY.
+- package.json / package-lock.json : Archivo con el listado de dependencias necesarias para el PRY.
 
--spec.yaml y doc.html: Docuementacion de las api + ejemplos.
+- spec.yaml y doc.html: Docuementacion de las api + ejemplos.
 
 Pasos para instalar e iniciar el proyecto:
 
