@@ -1,17 +1,23 @@
-Descripcion de los archivos que conforman al proyecto:
+Archivos que conforman al proyecto:
+	queries.sql
+	server.js
+	package.json / package-lock.json
+	spec.yaml / doc.html
 
-queries.sql: 
+--- Detalle:
+
+- queries.sql: 
 Se encuentran las tablas necesarias para realizar el CRUD de productos / Creacion de usuarios / realizar pedidos.
 Ademas de los CREATE, se incluye un usuario administrador.
 Con copiar y pegar las queries es suficiente.
 
 -server.js: Archivo js donde se encuentran las API.
 
--package.json: Archivo con el listado de dependencias necesarias para el PRY.
+-package.json / package-lock.json : Archivo con el listado de dependencias necesarias para el PRY.
 
--openapi.yaml y documentación.html: Son los archivos en los que encuentras las instrucciones de cómo usar cada uno de los endpoints correctamente. Los parámetros que espera recibir y lo que obtendrás como respuesta de cada uno de ellos.
+-spec.yaml y doc.html: Docuementacion de las api + ejemplos.
 
-Pasos para instalar e iniciar el proyecto
+Pasos para instalar e iniciar el proyecto:
 
 1- Abrir el archivo server.js
 2- Iniciar la terminal y posicionarse en el path donde se encuentren los archivos
@@ -24,7 +30,7 @@ Pasos para instalar e iniciar el proyecto
 	Nombre de la DB: delilahRestoDB
 5- Ejecutar el archivo 'server.js'** --> node server.js
 
-**Por defecto el server.js tiene configurado el puerto 3000.
+**Por defecto el server.js tiene configurado el puerto 3000, puede modificarse si se requiere.
 
 User admin: Admin
 Password: dino
