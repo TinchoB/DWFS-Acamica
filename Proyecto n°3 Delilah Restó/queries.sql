@@ -11,7 +11,7 @@ CREATE TABLE usuarios (
     admin INT NOT NULL
     );
 
-INSERT INTO usuarios (nombre_usuario, password, nombre, apellido, mail, telefono, admin) VALUES ("Admin", "sha1$672a9e4f$1$b0aadb8bb2ec43156df2c2499cda5ae80a1746e3", "Admin", "Admin", "admin@admin.com", "116889261", 1);
+INSERT INTO usuarios (nombre_usuario, password, nombre, apellido, mail, telefono, admin) VALUES ("Admin", "sha1$6050ea5f$1$f2308f5f45cb43e7d0601d32a58d2796974fb999", "Admin", "Admin", "admin@admin.com", "116889261", 1);
 
 CREATE TABLE pedidos (
     id INT PRIMARY KEY AUTO_INCREMENT,
