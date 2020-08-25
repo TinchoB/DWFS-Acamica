@@ -289,3 +289,17 @@ app.patch("/pedidos/:id", usuarioAdmin, (req, res) => {
             res.status(200).json("El estado del pedido fue modificado");
         });
 });
+
+// Endpoint para eliminar pedidos, solo administradores
+app.delete("/pedidos/:id", usuarioAdmin, (req, res) => {
+    let id_pedido = req.params.id;
+    sequelize.query("DELETE FROM pedidos WHERE id = ?", {
+        replacements: [id_pedido]
+    })
+    sequelize.query("DELETE FROM pedidos_productos WHERE id = ?", {
+            replacements: [id_pedido]
+        })
+        .then(resultados => {
+            res.status(200).json("Se ha eliminado el pedido");
+        });
+});
